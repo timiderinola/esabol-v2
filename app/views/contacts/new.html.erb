@@ -1,0 +1,59 @@
+<% provide(:title, 'Contact') %>
+<% provide(:row_info, 'Contact Us') %>
+
+<div class="container">
+  <h2>Contact</h2>
+  <div class="row" id="contact">
+    <%= render 'shared/flash_msg' %>
+    <div class="col-sm-8">
+      <p>
+        We'd love to hear from you. Fill the form below to make a booking or ask questions.
+        Your details will be kept private.
+      </p>
+      <div class="jumbotron" id="form_container">
+        <%= simple_form_for @contact do |f| %>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, required: true, class: 'form-control', placeholder: 'First and last name please' %>
+                  <%= f.label :phone %>
+                  <%= f.phone_field :phone, class: 'form-control', placeholder: 'What is your phone number?' %>
+                  <%= f.label :email %>
+                  <%= f.email_field :email, required: true, class: 'form-control', placeholder: 'What is your email address?' %>
+                  <div class= "hidden">
+                    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="comments">Comment/Questions:</label>
+                <%= f.text_area :comments, required: true, class: 'form-control', placeholder: 'Write your message here!' %>
+              </div>
+            </div>
+            <%= f.submit 'Submit', class: 'btn btn-primary pull-right' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="jumbotron" id="contact-details">
+        <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Company Addresses</h4>
+        <address>
+          <strong>ESABOL Juice and Smoothie Bar</strong><br>
+          Dwarf Shop 3<br>
+          FUTA Community Shopping Plaza<br>
+          Oba-Nla Campus, FUTA<br>
+          Akure, Nigeria.
+        </address>
+        <address>
+          <strong>ESABOL Juice and Smoothie Bar</strong><br>
+          FUTA Sports Complex<br>
+          Behind Hilltop Auditorium<br>
+          Oba-Nla Campus, FUTA<br>
+          Akure, Nigeria.
+        </address>
+      </div>
+    </div>
+  </div>
+</div>

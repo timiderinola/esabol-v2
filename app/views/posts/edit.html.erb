@@ -1,0 +1,10 @@
+<% provide(:title, "#{@post.title}") %>
+
+<div id="edit-post" class="container">
+  <h2>Edit post</h2>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @post %> |
+</div>
+

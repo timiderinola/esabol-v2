@@ -228,7 +228,7 @@ DEPENDENCIES
   annotate
   bcrypt (~> 3.1.7)
   bcrypt-ruby
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.6)
   bootstrap-will_paginate
   carrierwave
   ckeditor
@@ -248,7 +248,7 @@ DEPENDENCIES
   rails (= 5.1.6)
   rails-html-sanitizer
   rails_12factor
-  sass-rails
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   simple_form
   spring (= 2.0.2)

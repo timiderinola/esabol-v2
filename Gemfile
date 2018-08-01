@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '5.1.6'
 gem 'puma', '3.9.1'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~>3.3.6'
 gem 'turbolinks_transitions'
 gem 'mail_form'
 gem 'simple_form'
@@ -19,7 +19,7 @@ end
 
 group :assets do
   # Use SCSS for stylesheets
-  gem 'sass-rails'
+  gem 'sass-rails', '>=3.2'
   # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier'
   # Use CoffeeScript for .js.coffee assets and views

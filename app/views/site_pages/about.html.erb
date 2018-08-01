@@ -1,0 +1,74 @@
+<% provide(:title, 'About') %>
+<% provide(:row_info, 'About Us') %>
+
+<div class="container-fluid">
+  <div class="row">
+    <h2 class="text-center">About ESABOL Healthy Living Services</h2>
+    <div class="col-sm-3">
+      <blockquote>
+        <p class="text-justify quotes">Beloved, I wish above all things that thou mayest prosper and be in health,
+          even as thy soul prospereth.</p>
+        <footer class="text-right">
+          God<br>
+          <cite title="Source Title">3 John 1:2</cite>
+        </footer>
+      </blockquote>
+      <hr>
+      <blockquote>
+        <p class="text-justify quotes">Health is the greatest form of wealth, and right feeding is one the greatest factors of health.
+          As the common going says, "you are what you eat, and drink".</p>
+        <div class="text-right">
+          <%= image_tag 'profesan.jpg', alt: 'Prof. EA Aderinola', id: 'profesan', class: "img img-thumbnail img-circle" %>
+        </div>
+        <footer class="text-right">
+          Professor Esan A. Aderinola<br>
+          <cite title="Source Title">Founder/CEO</cite>
+        </footer>
+      </blockquote>
+    </div>
+    <div class="col-sm-6">
+      <h3>How EHLS Started</h3>
+      <p id="about" class="text-justify">
+        There were just a few juicers. Various home-made juices would be enjoyed by many people, even without knowledge of the Health
+        benefits. Along the line, research was made into the health benefits of some of these fruit juices, which you can find on
+        our <%= link_to 'blog', blog_path %>.
+      </p>
+      <p class="text-justify">
+        Thus, ESABOL Healthy Living Services was founded in 2009 by Professor Esan A. Aderinola, to the Glory of God, and for the benefit
+        of mankind. Since then, ESABOL has grown from a family business into a large business, providing healthy living services, selling
+        fresh fruit juices, and servicing events within and outside the home state - Ondo State, Nigeria.
+      </p>
+
+      <h3>What we do at EHLS</h3>
+      <p class="text-justify">
+        We provide fresh fruit juices, including Carrot, Cucumber, Watermelon, Orange, Shaddock, Grape, Pineapple and
+        Cabbage juices; Smoothies and Fruit Salad.
+        <bold>Our Products are 100% natural (no preservatives), undiluted and without sweeteners.</bold>
+      </p>
+      <p class="text-justify">
+        We can also produce and serve on the spot at your parties and ceremonies. On your call, we can also deliver our products at your
+        door step or offices. They are not only therapeutic, they are rejuvenating and reinvigorating. Remember:
+        <p class="text-center"><em>"You are what you eat and drink"</em></p>
+      </p>
+      <br>
+      <div class="text-center">
+        <%= image_tag 'about-page-picture-1.jpg', class: "img img-responsive img-rounded img-thumbnail about-image" %>
+      </div>
+      <p class="text-center"><em>ESABOL orange juice, watermelon juice, carrot juice and fruit salad.</em></p>
+      <br>
+      <p class="text-justify">
+        EHLS is not primarily a profit-making organization. We exist because we have a passion to see you healthy. Knowing that food is the
+        primary determinant of health, our goal is to provide what you need to stay healthy - food, drink, counseling, health talks, <em>etc.</em>.
+      </p>
+      <p class="text-justify">
+        We're not very far from you. Visit us today, and your health can only get better!
+      </p>
+    </div>
+    <div class="col-sm-3 text-center">
+      <div id="sidebar-slides" class="owl-carousel">
+        <div class="item"><%= image_tag 'slide-1.jpg', class: "lazyOwl" %></div>
+        <div class="item"><%= image_tag 'slide-2.jpg', class: "lazyOwl" %></div>
+      </div>
+    </div>
+  </div>
+</div>

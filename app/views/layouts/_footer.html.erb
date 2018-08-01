@@ -1,0 +1,51 @@
+<div class="footer container-fluid">
+  <div class="container">
+    <div id="footer-row-1" data-role="footer" class="row">
+      <div class="col-sm-4">
+        <h4>Contact us</h4>
+        <div id="wrapper">
+          <section id="primary">
+            <p>If you have an offer, or you need further information, do not hesitate to contact us!</p>
+            <p>Please only use phone contact for urgent inquiries.</p>
+          </section>
+          <section id="secondary">
+            <ul class=contact-info>
+              <li class="phone"><a id="first-phone" href="tel:08033500516">08033500516;</a> <a id="second-phone" href="tel:08058203168">08058203168</a></li>
+              <li class="mail"><a href="mailto:info@esabolhealthyliving.com">info@esabol.com</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <h4>Visit us:</h4>
+        <address>
+          <strong>ESABOL Juice and Smoothie Bar</strong><br>
+          FUTA Shopping Complex<br>
+          Motion Ground<br>
+          Oba-Nla Campus, FUTA<br>
+          Akure, Nigeria.
+        </address>
+      </div>
+      <div class="col-sm-4">
+        <h4>Quick Links</h4>
+        <% @post = Post.last %>
+        <ul style="list-style: none; padding-left: 7px;">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Contact', contact_path %></li>
+          <% if @post %>
+            <li><%= link_to @post.title, @post %></li>
+          <% end %>
+          <% unless logged_in? %>
+            <%= link_to 'Admin Login', login_path %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div id="footer-row-2" class="row">
+      <%= link_to (image_tag 'esabol_logo.png', alt: 'ESABOL', class: 'logo'), root_path %><br>
+      &copy <%= Time.current.year %>. All rights reserved.
+    </div>
+  </div>
+</div>

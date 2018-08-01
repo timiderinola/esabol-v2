@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 class="text-center blog-page-title"><%= image_tag 'blog_logo.png', alt: 'ESABOL', class: 'blog_logo' %></h2>
+  <div class="row">
+    <div id="post" class="col-sm-9">
+      <div id="show-post">
+        <h3 class="blog-title">
+          <%= @post.title %>
+          <small><p>by <%= @post.author %><br>
+            <em><%= friendly_date @post.created_at %></em></p></small>
+        </h3>
+        <em>
+          <p>
+            <a href="#comments-start"><i class="fa fa-comment-o"></i><%= @post.comments.count %></a>
+            <span class="pull-right">
+                Last updated <%= time_ago_in_words @post.updated_at %> ago
+              <% if logged_in? %>
+                    <%= link_to content_tag(:span, '', class: 'fa fa-trash-o') , @post,
+                                method: :delete, data: { confirm: 'Are you sure?'} %>
+                  <%= link_to content_tag(:span, '', class: 'fa fa-edit') , edit_post_path(@post) %>
+                <% end %>
+            </span>
+          </p>
+        </em>
+        <hr>
+        <div class="post-content"><%= raw @post.content %></div>
+        <br id="comments-start">
+
+        <h3>Comments</h3>
+
+        <%= render @post.comments %>
+
+        <%= form_for [@post, @post.comments.build] do |f| %>
+            <div class='form-group'>
+              <%= f.text_field :author, class: 'form-control', placeholder:'Your name', required:'required' %>
+            </div>
+            <div class='form-group'>
+              <%= f.cktext_area :content, :ckeditor => {language: 'en', toolbar: 'comment'}, required: true, class: 'form-control', placeholder:'Your comments/questions' %>
+            </div>
+            <div class='actions'>
+              <%= f.submit class:'btn btn-primary' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="sidebar" class="col-sm-3">
+      <p class="text-justify">
+        Get the latest on health benefits of foods, fruits and fruit juices.
+        <% link_to 'Contact us', new_contact_path %> Please contact us if you have any information to add.
+        The information will be credited to you.
+      </p>
+      <h2>Recent Posts</h2>
+      <ul>
+        <% posts = Post.all.order('created_at DESC') %>
+        <% posts.each do |post| %>
+            <li><%= link_to post.title, post %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

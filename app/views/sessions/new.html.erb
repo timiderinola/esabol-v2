@@ -1,0 +1,21 @@
+<% provide(:title, "Sign in") %>
+
+<div id="login-page" class="container">
+  <div class="text-center">
+    <h4>Admin Login</h4>
+    <div class="text-left">
+      <%= form_for(:session, url: sessions_path) do |f| %>
+          <%= label_tag :username %>
+          <%= f.text_field :username, class: "form-control", placeholder: "Username", required: true, autofocus: true %>
+          <%= label_tag :password %>
+          <%= f.password_field :password, class: "form-control", placeholder: "Password (6 characters minimum)", required: true, minlength: "6", maxlength: "20" %>
+          <br>
+          <%= f.submit 'Login', class: 'btn btn-lg btn-primary btn-block' %>
+      <% end %>
+      <script>
+          $("form").validate();
+      </script>
+      <br>
+    </div>
+  </div>
+</div>
